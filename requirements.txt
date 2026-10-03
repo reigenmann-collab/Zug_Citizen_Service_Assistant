@@ -1,8 +1,7 @@
-beautifulsoup4
-faiss-cpu
-fastembed==0.8.0
-google-genai>=2.20
-numpy
-pypdf
-requests
+# Laufzeit-Abhaengigkeiten der App (Streamlit Community Cloud).
+# Crawler und Ingestion brauchen zusaetzlich requirements-dev.txt.
 streamlit>=1.40
+fastembed==0.8.0
+faiss-cpu
+numpy
+google-genai>=2.20

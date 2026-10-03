@@ -1,0 +1,6 @@
+# Zusaetzlich fuer Crawl, Ingestion und Evaluation (lokal, nicht fuer das Deployment)
+-r requirements.txt
+requests
+beautifulsoup4
+pypdf
+openpyxl
