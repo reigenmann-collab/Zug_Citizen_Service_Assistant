@@ -10,7 +10,7 @@ ohne Modellaufruf an die zuständige Stelle weitergeleitet.
 ## Schnellstart lokal
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt   # nur die App: requirements.txt
 cp .env.example .env            # GEMINI_API_KEY eintragen
 streamlit run app.py
 ```
