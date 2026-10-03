@@ -6,6 +6,10 @@ MODELL = "gemini-3.1-flash-lite"
 ROOT = Path(__file__).resolve().parent.parent
 
 
+class LLMDauerhaft(RuntimeError):
+    """Dauerhafter Fehler (Guthaben, Schluessel, Berechtigung). Wiederholen ist sinnlos."""
+
+
 class LLMUeberlastet(RuntimeError):
     """Dienst nicht erreichbar oder ueberlastet. Die Pipeline eskaliert dann an einen Menschen."""
 
@@ -39,6 +43,13 @@ FEHLER_DE = ("Der Sprachdienst ist zurzeit nicht erreichbar. Bitte versuchen Sie
              "oder wenden Sie sich an die Abteilung Sicherheit und Verkehr der Stadt Zug.")
 FEHLER_EN = ("The language service is currently unavailable. Please try again in a few minutes or contact the "
              "Department of Safety and Traffic of the City of Zug.")
+
+# Fehler, bei denen Warten nichts hilft: Guthaben aufgebraucht, Schluessel ungueltig, Zugriff verweigert.
+# Gemessen in der Cloud: 402 "prepayment credits are depleted" trug den Text RESOURCE_EXHAUSTED und wurde
+# deshalb wie ein kurzes Minutenlimit behandelt - mit 25 bis 70 Sekunden Wartezeit je Versuch hing die App
+# ueber zwei Minuten, bevor sie scheiterte. Diese Fehler muessen sofort abbrechen.
+DAUERHAFT = ("402", "prepayment credits", "billing", "api key not valid", "api_key_invalid",
+             "permission_denied", "403", "401", "unauthenticated")
 
 UEBERLAST = ("503", "overloaded", "unavailable", "429", "resource_exhausted", "rate limit", "500", "internal",
              "deadline", "timeout")
@@ -78,6 +89,8 @@ def frag(prompt, schema=None, temperature=0.0, versuche=4, modell=MODELL):
         except Exception as e:
             letzter = e
             txt = f"{type(e).__name__} {e}".lower()
+            if any(d in txt for d in DAUERHAFT):
+                raise LLMDauerhaft(f"{type(e).__name__}: {e}") from e
             if i == versuche - 1 or not any(s in txt for s in UEBERLAST):
                 break
             time.sleep(_wartezeit(txt, i))

@@ -15,7 +15,7 @@ from . import generate as gen
 from . import grounding
 from .auditlog import pseudonym, schreibe
 from .lang import detect, EN_DISCLAIMER
-from .llm import frag, nur_json, LLMUeberlastet, FEHLER_DE, FEHLER_EN, MODELL
+from .llm import frag, nur_json, LLMUeberlastet, LLMDauerhaft, FEHLER_DE, FEHLER_EN, MODELL
 from .retrieve import search
 from .routing import hard_route, KONTAKT
 
@@ -123,7 +123,7 @@ def antworte(frage: str, *, reranker=None, k=KONTEXT_K, kandidaten=KANDIDATEN,
     melde("generierung")
     try:
         res, meta = frag(gen.prompt(frage, ausgewaehlt, lang, hinweis), gen.SCHEMA)
-    except LLMUeberlastet as e:
+    except (LLMUeberlastet, LLMDauerhaft) as e:
         erg = _eskalation("dienst", {}, lang, quellen=quellen_ids)
         erg.update({"antwort_id": antwort_id, "fehler": str(e), "dauer_s": round(time.time() - t0, 2)})
         schreibe({**basis, "entscheid": "eskaliert", "eskalationsgrund": "dienst",
