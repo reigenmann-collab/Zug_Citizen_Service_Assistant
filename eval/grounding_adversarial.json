@@ -1,0 +1,165 @@
+[
+ {
+  "id": "G01",
+  "zweck": "erfundener Preis (Vorgabe CLAUDE.md, auf Zug uebertragen)",
+  "kontext_chunks": [
+   "law:7.7.5-2#12"
+  ],
+  "behauptung": "Die Anwohnerparkkarte kostet CHF 200.00 pro Monat.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Der Betrag kommt im Kontext nicht vor. Muss erkannt werden, auch wenn Waehrung und Einheit stimmen."
+ },
+ {
+  "id": "G02",
+  "zweck": "korrekter Preis, woertlich",
+  "kontext_chunks": [
+   "law:7.7.5-2#12"
+  ],
+  "behauptung": "Die Anwohnerparkkarte kostet CHF 30.00 pro Monat, wenn die Nachtparkgebuehr bereits bezahlt ist.",
+  "erwartet": "gedeckt",
+  "kommentar": "Gegenprobe. Ein Checker, der alles ablehnt, faellt hier durch."
+ },
+ {
+  "id": "G03",
+  "zweck": "erfundene Gueltigkeitsdauer (Vorgabe CLAUDE.md)",
+  "kontext_chunks": [
+   "law:7.7.5-3#5"
+  ],
+  "behauptung": "Die Zufahrtsbewilligung fuer Anwohnende ist zehn Jahre gueltig.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Der Kontext nennt maximal fuenf Jahre. Zahlendreher in einer Dauer."
+ },
+ {
+  "id": "G04",
+  "zweck": "korrekte Gueltigkeitsdauer, paraphrasiert",
+  "kontext_chunks": [
+   "law:7.7.5-3#5"
+  ],
+  "behauptung": "Anwohnende erhalten die Bewilligung fuer hoechstens fuenf Jahre, danach verlaengert sie sich von selbst.",
+  "erwartet": "gedeckt",
+  "kommentar": "Inhaltlich korrekt, aber nicht woertlich. Prueft, ob der Checker Paraphrasen akzeptiert."
+ },
+ {
+  "id": "G05",
+  "zweck": "richtige Zahl, falsche Zuordnung",
+  "kontext_chunks": [
+   "law:7.7.5-2#9"
+  ],
+  "behauptung": "Die Nachtparkgebuehr fuer schwere Motorwagen ueber 3.5 t betraegt CHF 30.00 pro Monat.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "CHF 30.00 gilt nach Bst. a fuer leichte Motorwagen. Der Betrag fuer schwere Fahrzeuge steht in diesem Chunk nicht. Haeufigster realer Fehlertyp: Zahl aus dem Kontext, falsch zugeordnet."
+ },
+ {
+  "id": "G06",
+  "zweck": "Zahl gar nicht im Korpus",
+  "kontext_chunks": [
+   "law:7.7.5-2#19"
+  ],
+  "behauptung": "Das Parkhaus Arena verfuegt ueber 450 Parkplaetze.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Der Kontext nennt die vier Parkhaeuser, aber keine Platzzahlen."
+ },
+ {
+  "id": "G07",
+  "zweck": "Verallgemeinerung ueber den Kontext hinaus",
+  "kontext_chunks": [
+   "web:de/mobilitaet/parkieren#9"
+  ],
+  "behauptung": "Die Anwohnerparkkarte kostet in allen Zonen CHF 30.00 pro Monat, unabhaengig von der Nachtparkgebuehr.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Der Webseiten-Chunk nennt CHF 30.00, aber der Zusatz unabhaengig von der Nachtparkgebuehr ist eine Behauptung, die der Erlass widerlegt. Prueft, ob eine unzulaessige Verallgemeinerung auffaellt."
+ },
+ {
+  "id": "G08",
+  "zweck": "mehrere Fakten, einer falsch",
+  "kontext_chunks": [
+   "law:7.7.5-2#14"
+  ],
+  "behauptung": "Die Gewerbeparkkarte kostet CHF 6.00 pro Tag, CHF 60.00 fuer 30 Tage und CHF 500.00 fuer 12 Monate.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Zwei Betraege stimmen, der dritte ist falsch (CHF 600.00). Eine Antwort, die nur mehrheitlich stimmt, darf nicht als gedeckt gelten."
+ },
+ {
+  "id": "G09",
+  "zweck": "korrekte Aufzaehlung",
+  "kontext_chunks": [
+   "law:7.7.5-2#19"
+  ],
+  "behauptung": "Die Stadt Zug betreibt die Parkhaeuser Altstadt-Casino, Neustadtplatz, Arena und Frauensteinmatt.",
+  "erwartet": "gedeckt",
+  "kommentar": "Gegenprobe mit Aufzaehlung."
+ },
+ {
+  "id": "G10",
+  "zweck": "veraltete Bezeichnung ohne Fussnote",
+  "kontext_chunks": [
+   "law:7.7.5-1"
+  ],
+  "behauptung": "Fuer den Vollzug ist die Stadtpolizei Zug zustaendig.",
+  "erwartet": "gedeckt_aber_veraltet",
+  "kommentar": "Steht so im Erlasstext, ist aber durch die Fussnote ueberholt (heute Abteilung Sicherheit und Verkehr). Weder reines gedeckt noch nicht_gedeckt; prueft, ob der Checker diese Kategorie braucht. Entscheid in Phase 5 dokumentieren."
+ },
+ {
+  "id": "G11",
+  "zweck": "erfundene Zustaendigkeit",
+  "kontext_chunks": [
+   "law:7.7.5-2#21"
+  ],
+  "behauptung": "Diese Verordnung wird von der Zuger Polizei vollzogen.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Der Kontext nennt das Departement Soziales, Umwelt und Sicherheit. Prueft Verwechslung aehnlich klingender Behoerden."
+ },
+ {
+  "id": "G12",
+  "zweck": "korrekte Verneinung",
+  "kontext_chunks": [
+   "law:7.7.5-2#10"
+  ],
+  "behauptung": "Die Anwohnerparkkarte gibt keinen Anspruch auf einen freien Parkplatz.",
+  "erwartet": "gedeckt",
+  "kommentar": "Gegenprobe mit Negation. Checker, die Negationen schlecht verarbeiten, markieren das faelschlich als nicht gedeckt."
+ },
+ {
+  "id": "G13",
+  "zweck": "Korrektur einer Falschannahme – die falsche Zahl wird genannt, um sie zu verneinen",
+  "kontext_chunks": [
+   "law:7.7.5-3#5"
+  ],
+  "behauptung": "Die Aussage, dass eine Zufahrtsbewilligung CHF 50.00 pro Jahr kostet, ist nicht korrekt. Gemaess SRS 7.7.5-3 § 6 Abs. 1 werden saemtliche Zufahrtsbewilligungen kostenlos ausgestellt.",
+  "erwartet": "gedeckt",
+  "kommentar": "Gefunden im test-Split (T17). Eine Falschannahme laesst sich nur korrigieren, indem man sie benennt. Schicht A darf die Zahl aus der Frage nicht als erfunden werten, Schicht B die Behauptung nicht aus der Verneinung herausloesen.",
+  "frage": "Die Zufahrtsbewilligung kostet CHF 50 pro Jahr, oder?"
+ },
+ {
+  "id": "G14",
+  "zweck": "korrekte Wiedergabe einer Zuordnung – darf nicht als Vertauschung gelten",
+  "kontext_chunks": [
+   "web:de/mobilitaet/baustellen"
+  ],
+  "behauptung": "Auf der Karte sind aktuelle Baustellen blau und geplante Baustellen rot hinterlegt.",
+  "erwartet": "gedeckt",
+  "kommentar": "Gefunden im test-Split (T07). Schicht B behauptete eine Vertauschung und gab in der eigenen Begruendung dieselbe Zuordnung wieder wie die Antwort."
+ },
+ {
+  "id": "G15",
+  "zweck": "falsche Fundstelle bei richtigem Inhalt",
+  "kontext_chunks": [
+   "law:7.7.5-2#10",
+   "law:7.7.5-2#11"
+  ],
+  "behauptung": "Die Arbeitgeberin muss gemaess SRS 7.7.5-2 § 6 schriftlich bestaetigen, dass ein Geschaeftsfahrzeug zur privaten Benuetzung zur Verfuegung steht.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Gefunden im test-Split (T04). Inhalt stimmt, die Fundstelle nicht – § 11 Abs. 3 Bst. d statt § 6. Fuer eine Verwaltungsauskunft ist die falsche Fundstelle ein echter Fehler, Schicht B soll das weiter finden."
+ },
+ {
+  "id": "G16",
+  "zweck": "Bestaetigung einer falschen Annahme aus der Frage",
+  "kontext_chunks": [
+   "law:7.7.5-3#5"
+  ],
+  "behauptung": "Ja, die Zufahrtsbewilligung kostet CHF 50.00 pro Jahr.",
+  "erwartet": "nicht_gedeckt",
+  "kommentar": "Gegenprobe zu G13. Wird die Zahl aus der Frage von Schicht A ausgenommen, muss Schicht B diesen Fall fangen – sonst entsteht durch die Ausnahme eine Luecke.",
+  "frage": "Die Zufahrtsbewilligung kostet CHF 50 pro Jahr, oder?"
+ }
+]

@@ -1,0 +1,143 @@
+[
+ {
+  "q": "Was kostet eine Anwohnerparkkarte pro Monat?",
+  "doc": "law:7.7.5-2",
+  "must": "CHF 60.00"
+ },
+ {
+  "q": "Was kostet eine Anwohnerparkkarte pro Monat?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "Pro Monat: CHF 30"
+ },
+ {
+  "q": "Wie viel kostet das Parkieren im Parkhaus für 3 Stunden?",
+  "doc": "law:7.7.5-2",
+  "must": "bis 3 Std.: CHF 4.50",
+  "alt": [
+   {
+    "doc": "web:de/mobilitaet/parkieren",
+    "must": "bis 3 Std. CHF 4.50"
+   }
+  ]
+ },
+ {
+  "q": "Was kostet ein Dauerparkplatz im Parkhaus Arena?",
+  "doc": "law:7.7.5-2",
+  "must": "CHF 210.00"
+ },
+ {
+  "q": "Wie hoch ist die Gebühr für das Nachtparkieren?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "Pro Monat für leichte Motorwagen"
+ },
+ {
+  "q": "Brauche ich eine Bewilligung, wenn ich nachts auf öffentlichem Grund parkiere?",
+  "doc": "law:7.7.5-1",
+  "must": "behördlicher Bewilligung"
+ },
+ {
+  "q": "Wer vollzieht das Reglement über das nächtliche Dauerparkieren?",
+  "doc": "law:7.7.5-1",
+  "must": "Abteilung Sicherheit und Verkehr"
+ },
+ {
+  "q": "Was kostet die Besucherparkkarte?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "CHF 5"
+ },
+ {
+  "q": "Für welche Zonen gibt es Anwohnerparkkarten?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "Zone 4"
+ },
+ {
+  "q": "Was kostet die Gewerbeparkkarte pro Jahr?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "CHF 600"
+ },
+ {
+  "q": "Wo kann ich eine Parkkarte bestellen?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "Online-Schalter"
+ },
+ {
+  "q": "Was kostet ein Platz im Velohaus am Bahnhof?",
+  "doc": "web:de/mobilitaet/parkieren",
+  "must": "CHF 90"
+ },
+ {
+  "q": "Haftet die Stadt für Schäden an meinem Auto im Parkhaus?",
+  "doc": "law:7.7.5-2",
+  "must": "lehnt die Haftung"
+ },
+ {
+  "q": "Wie bekomme ich eine Zufahrtsbewilligung?",
+  "doc": "web:de/mobilitaet/zufahrtsbewilligung",
+  "must": ""
+ },
+ {
+  "q": "Wann wird eine Zufahrtsbewilligung entzogen?",
+  "doc": "law:7.7.5-3",
+  "must": "Entzug"
+ },
+ {
+  "q": "Wann räumt die Stadt Zug im Winter Schnee?",
+  "doc": "web:de/mobilitaet/winterdienst",
+  "must": ""
+ },
+ {
+  "q": "Wo finde ich aktuelle Baustellen und Strassensperrungen?",
+  "doc": "web:de/mobilitaet/baustellen",
+  "must": ""
+ },
+ {
+  "q": "Wo kann ich mein Elektroauto laden?",
+  "doc": "web:de/mobilitaet/elektromobilitaet",
+  "must": ""
+ },
+ {
+  "q": "Wie installiere ich eine Ladestation in einer Mehrfamilienhaus-Garage?",
+  "doc": "pdf:",
+  "must": ""
+ },
+ {
+  "q": "Darf ich in der Stadt Zug ein Taxi betreiben, was braucht es dafür?",
+  "doc": "law:9.5-4",
+  "must": ""
+ },
+ {
+  "q": "Was kostet es, öffentlichen Grund für einen Anlass zu benutzen?",
+  "doc": "law:7.7.1-1.1",
+  "must": "CHF"
+ },
+ {
+  "q": "Wie sicher ist der Schulweg und wer ist für Schulwegsicherheit zuständig?",
+  "doc": "web:de/sicherheit/schulwegsicherheit",
+  "must": ""
+ },
+ {
+  "q": "How much does a resident parking permit cost?",
+  "doc": "law:7.7.5-2",
+  "must": "CHF 60.00"
+ },
+ {
+  "q": "Do I need a permit to park overnight on public land?",
+  "doc": "law:7.7.5-1",
+  "must": "behördlicher Bewilligung"
+ },
+ {
+  "q": "Where do I report a broken street light?",
+  "doc": "web:de/ueber-die-stadt-zug/ortspflege/strassenbeleuchtung",
+  "must": ""
+ },
+ {
+  "q": "Wie viele Parkplätze muss ich bei einem Neubau erstellen?",
+  "doc": "law:7.1-1.5",
+  "must": ""
+ },
+ {
+  "q": "Wer ist für Strassenunterhalt auf Gemeindestrassen zuständig?",
+  "doc": "web:de/ueber-die-stadt-zug/ortspflege/strassenbau-unterhalt",
+  "must": ""
+ }
+]

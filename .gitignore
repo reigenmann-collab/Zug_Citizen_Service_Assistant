@@ -1,0 +1,22 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+crawl_probe/
+data/raw/docs/
+data/raw/html/
+.streamlit/secrets.toml
+data/audit/
+
+# Nicht Teil des Code-Repositories (interne Pitch-Unterlagen, fremde Projektvorlagen, Arbeitsstaende)
+Management-Dokumente/
+Vorlagen/
+Claude outputs/
+Claude outputs for Code/
+data/raw/
+data/audit/
+.claude/
+crawl_probe/
+eval/*.bak
