@@ -34,7 +34,7 @@ Befunde:
   dasselbe RAM-Problem, und Jina hat in diesem Projekt bereits NaN-Vektoren geliefert.
 
 **Entscheid:** Im Pilotbetrieb auf Streamlit Community Cloud **kein Cross-Encoder**. Grund ist nicht die
-Qualität, sondern das Gedächtnis: ~1 GB RAM im Free Tier gegen ~3.1 GB Bedarf. Stattdessen `k=10` statt
+Qualität, sondern das Gedächtnis: 2,7 GB pro App auf Community Cloud (ursprünglich mit ~1 GB angesetzt, korrigiert nach den Limits im Konto) gegen ~3.1 GB Bedarf. Stattdessen `k=10` statt
 `k=5` Kontextblöcke, damit der richtige Chunk auch bei Rang 10 im Prompt landet (dense @10 = 26/27).
 Der Reranker-Code bleibt und ist über `antworte(..., reranker="bge")` zuschaltbar. **Empfehlung für einen
 Host mit ≥4 GB RAM: `bge`, 400 Zeichen, 10 Kandidaten** (+2 bei @1, +1 bei @3, 2.1 s Zusatzlatenz).

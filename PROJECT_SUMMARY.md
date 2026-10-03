@@ -210,7 +210,7 @@ Die Pipeline selbst muss nicht neu gebaut werden.
 
 | Entscheid | Begründung | Revision wann |
 |---|---|---|
-| Kein Cross-Encoder-Reranker im Pilot | 3,1 GB RAM, Streamlit Free Tier ~1 GB | bei ≥4 GB Hosting |
+| Kein Cross-Encoder-Reranker im Pilot | 3,1 GB RAM, Community Cloud 2,7 GB pro App | bei ≥4 GB Hosting |
 | Keine Confidence-Schwelle | AUC-Intervall schliesst 0.5 ein | nach ≥30 falschen Urteilen |
 | Strukturelle Eskalation | nachvollziehbar, prüfbar, nicht an C gebunden | nach Pilotauswertung |
 | Gemini flash-lite | verfügbar, günstig, Fehler wie oben | bei Hosting-Entscheid (Schweiz?) |

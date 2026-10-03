@@ -77,7 +77,7 @@ erhält keinen unabhängigen Wert mehr und sollte das im Bericht vermerken.
 - **Das Audit-Log ist auf Streamlit Cloud nicht dauerhaft.** `data/audit/` liegt im Container und ist nach
   einem Neustart weg. Für den Pilotbetrieb braucht es eine externe Ablage, sonst entstehen keine
   Kalibrierungsdaten (siehe PROGRESSION/005).
-- **Arbeitsspeicher.** Embedding-Modell und FAISS-Index passen in den Free Tier (~1 GB). Ein
+- **Arbeitsspeicher.** Embedding-Modell und FAISS-Index passen in die Grenze von Community Cloud (2,7 GB pro App). Ein
   Cross-Encoder-Reranker **nicht** – gemessen rund 3.1 GB, deshalb ist er abgeschaltet
   (PROGRESSION/004).
 - **API-Kontingent.** Jede Frage kostet zwei Modellaufrufe (Generierung und Prüfung). Im Free Tier
