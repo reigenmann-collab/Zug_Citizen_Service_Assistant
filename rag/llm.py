@@ -1,5 +1,5 @@
 """Gemini-Anbindung. Retry mit Backoff bei Ueberlast, deutsche Fehlermeldung statt Traceback (CLAUDE.md)."""
-import json, os, random, re, time
+import json, os, random, re, sys, time
 from pathlib import Path
 
 MODELL = "gemini-3.1-flash-lite"
@@ -89,6 +89,8 @@ def frag(prompt, schema=None, temperature=0.0, versuche=4, modell=MODELL):
         except Exception as e:
             letzter = e
             txt = f"{type(e).__name__} {e}".lower()
+            # Echten Fehler ins Server-Log (Streamlit Cloud: Manage app > Logs). Ohne das bleibt die Ursache unsichtbar.
+            print(f"[llm] {modell} Versuch {i + 1}/{versuche}: {type(e).__name__}: {str(e)[:300]}", file=sys.stderr, flush=True)
             if any(d in txt for d in DAUERHAFT):
                 raise LLMDauerhaft(f"{type(e).__name__}: {e}") from e
             if i == versuche - 1 or not any(s in txt for s in UEBERLAST):
